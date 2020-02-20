@@ -71,12 +71,12 @@ likeButton.addEventListener("click",function(){
     //let li = undefined
     if (document.getElementById(num) != null) {
         let li = document.getElementById(num)
-        let int = parseInt(li.innerText.match(/\d*\s\w{5}$/)[0])
-        li.innerText = `${num} : ${(int + 1).toString()} likes`
+        let int = parseInt(li.innerText.match(/\d*\s\w{4,5}$/)[0])
+        li.innerText = `Number: ${num} : ${(int + 1).toString()} likes`
     } else {
         let li = document.createElement("li")
         li.setAttribute('id',num)
-        li.innerText = `${num} : 1 likes`
+        li.innerText = `Number: ${num} : 1 like`
         ul.appendChild(li)
     }
 })
