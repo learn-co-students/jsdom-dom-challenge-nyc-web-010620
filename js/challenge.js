@@ -35,17 +35,16 @@ const minusbutt = document.getElementById('minus')
 const heartbutt = document.getElementById('heart')
     heartbutt.addEventListener('click', function() {
         if (enabled === true){
-            if (likeCount){
+            if (document.getElementById(`${counter.textContent}`)){
+                let like_line = document.getElementById(`${counter.textContent}`)
                 likeCount++
-                newNumber = likeCount
-                let li = document.getElementById(`${counter.innerText}`)
-                li.innerText = `${counter.innerText} has been liked ${newNumber} times`
+                like_line.textContent = `${counter.textContent} has been liked ${likeCount} times`
             } else {
                 let likes = document.getElementById('likes')
                 let li = document.createElement('li')
-                li.id = document.getElementById(`${counter.innerText}`)
+                li.id = document.getElementById("counter").innerText
                 likeCount = 1
-                li.innerText = `${li.id} is liked 1 time`
+                li.textContent = `${li.id} is liked ${likeCount} time`
                 likes.append(li)
             }       
         }
